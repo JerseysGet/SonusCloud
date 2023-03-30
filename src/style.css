@@ -30,6 +30,9 @@ body {
   width: 150px;
 }
 nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 10rem));
+  text-align: center;
   position: absolute;
   right: 1.5%;
 }
@@ -37,43 +40,55 @@ nav {
 nav > a {
   color: white;
   text-decoration: none;
-  transition: 0.4s;
+  transition: 0.3s;
   margin: 0 1rem;
 }
 
-
 nav > a:hover {
+  font-weight: 600;
   color: var(--primary-accent);
 }
 
-nav > a.selected {
-  color: var(--secondary-accent)
-}
+/* nav > a.selected {
+  color: var(--secondary-accent);
+} */
 
 nav .dot {
   width: 7px;
   height: 7px;
   background: var(--primary-accent);
   border-radius: 50%;
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateX(30px);
   transition: 0.4s;
   margin-top: 0.3rem;
 }
 
-nav a:hover ~ .dot {
+nav > a:hover ~ .dot {
   transition: 0.4s;
   opacity: 1;
 }
 
-nav a:nth-child(1):hover ~ .dot {
-  transform: translateX(48px);
+nav > a:nth-child(1).selected ~ .dot {
+  transform: translateX(75px);
 }
 
-nav a:nth-child(2):hover ~ .dot {
-  transform: translateX(163px);
+nav > a:nth-child(2).selected ~ .dot {
+  transform: translateX(238px);
 }
 
-nav a:nth-child(3):hover ~ .dot {
-  transform: translateX(283px);
+nav > a:nth-child(3).selected ~ .dot {
+  transform: translateX(395px);
+}
+
+nav > a:nth-child(1):hover ~ .dot {
+  transform: translateX(75px);
+}
+
+nav > a:nth-child(2):hover ~ .dot {
+  transform: translateX(238px);
+}
+
+nav > a:nth-child(3):hover ~ .dot {
+  transform: translateX(395px);
 }
