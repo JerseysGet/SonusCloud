@@ -2,7 +2,6 @@
 
 :root {
   --primary-accent: rgb(166, 236, 255);
-  --secondary-accent: rgb(144, 45, 194);
 }
 
 * {
@@ -49,16 +48,11 @@ nav > a:hover {
   color: var(--primary-accent);
 }
 
-/* nav > a.selected {
-  color: var(--secondary-accent);
-} */
-
 nav .dot {
   width: 7px;
   height: 7px;
   background: var(--primary-accent);
   border-radius: 50%;
-  /* opacity: 0; */
   transform: translateX(30px);
   transition: 0.4s;
   margin-top: 0.3rem;
