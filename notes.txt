@@ -12,3 +12,6 @@ Notes:
 - Persistent Navbar: Home | Artists | About
 - Persistent Footer: About
 - Make documentation
+
+To Do:
+- Navbar bold on hover
