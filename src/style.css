@@ -2,6 +2,7 @@
 
 :root {
   --primary-accent: rgb(166, 236, 255);
+  --secondary-accent: rgb(144, 45, 194);
 }
 
 * {
@@ -40,8 +41,13 @@ nav > a {
   margin: 0 1rem;
 }
 
+
 nav > a:hover {
   color: var(--primary-accent);
+}
+
+nav > a.selected {
+  color: var(--secondary-accent)
 }
 
 nav .dot {
