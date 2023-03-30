@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,350,400,500,600");
+
+:root {
+  --primary-accent: rgb(166, 236, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  font-family: "Open Sans";
+  font-weight: 350;
+  color: white;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  padding: 1.2rem;
+  user-select: none;
+  font-size: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+nav {
+  position: absolute;
+  right: 1.5%;
+}
+
+nav > a {
+  color: white;
+  text-decoration: none;
+  transition: 0.4s;
+  margin: 0 1rem;
+}
+
+nav > a:hover {
+  color: var(--primary-accent);
+}
+
+nav .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--primary-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: 0.4s;
+  margin-top: 0.3rem;
+}
+
+nav a:hover ~ .dot {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+nav a:nth-child(1):hover ~ .dot {
+  transform: translateX(48px);
+}
+
+nav a:nth-child(2):hover ~ .dot {
+  transform: translateX(163px);
+}
+
+nav a:nth-child(3):hover ~ .dot {
+  transform: translateX(283px);
+}
