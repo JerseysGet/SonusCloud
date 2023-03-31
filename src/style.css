@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,350,400,500,600");
+/* @import url("./assets/fonts/OpenSans.ttf"); */
+@font-face {
+  font-family: OpenSans;
+  src: url(./assets/fonts/OpenSans.ttf);
+}
 
 :root {
   --primary-accent: rgb(166, 236, 255);
@@ -11,7 +15,7 @@
 
 body {
   background: black;
-  font-family: "Open Sans";
+  font-family: "OpenSans";
   font-weight: 350;
   color: white;
 }
@@ -39,7 +43,7 @@ nav {
 nav > a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s color;
   margin: 0 1rem;
 }
 
