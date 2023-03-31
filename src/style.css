@@ -250,6 +250,20 @@ nav > a:nth-child(3):hover ~ .dot {
   justify-content: space-between;
   align-items: center;
 }
+.hover_underline:after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 3px;
+  background: white;
+  transition: 0.3s ease;
+  bottom: 0;
+  width: 0;
+}
+
+.hover_underline:hover:after {
+  width: 100%;
+}
 
 .hero {
   padding-top: 10vw;
