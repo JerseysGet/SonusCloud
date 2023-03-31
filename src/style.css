@@ -4,13 +4,13 @@
 }
 
 @font-face {
-  font-family: Staaliches;
-  src: url(./assets/fonts/Staatliches.ttf);
+  font-family: OpenSansLight;
+  src: url(./assets/fonts/OpenSansLight.ttf);
 }
 
 @font-face {
-  font-family: OpenSansLight;
-  src: url(./assets/fonts/OpenSansLight.ttf);
+  font-family: Staaliches;
+  src: url(./assets/fonts/Staatliches.ttf);
 }
 
 @font-face {
@@ -20,6 +20,12 @@
 
 :root {
   --primary-accent: rgb(166, 236, 255);
+  --goldA: #ffd200;
+  --goldB: #f7971e;
+  --silverA: #eef2f3;
+  --silverB: #8e9eab;
+  --bronzeA: #b79891;
+  --bronzeB: #94716b;
 }
 
 * {
@@ -49,7 +55,7 @@ body {
 
 .logo {
   filter: invert(100%);
-  width: 150px;
+  width: 10vw;
 }
 
 nav {
@@ -144,15 +150,7 @@ nav > a:nth-child(3):hover ~ .dot {
   aspect-ratio: 1/1;
   border: double 5px transparent;
   border-radius: 50%;
-  background-image: linear-gradient(black, black),
-    radial-gradient(
-      circle at bottom left,
-      #8b8dec,
-      #8b8dec,
-      #8b8dec,
-      #3a21d9,
-      #3a21d9
-    );
+
   background-origin: border-box;
   background-clip: content-box, border-box;
   overflow: hidden;
@@ -169,6 +167,42 @@ nav > a:nth-child(3):hover ~ .dot {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.top_item:nth-child(2) > .profile_circle {
+  background-image: linear-gradient(black, black),
+    radial-gradient(
+      circle at bottom left,
+      var(--goldA),
+      var(--goldA),
+      var(--goldA),
+      var(--goldB),
+      var(--goldB)
+    );
+}
+
+.top_item:nth-child(3) > .profile_circle {
+  background-image: linear-gradient(black, black),
+    radial-gradient(
+      circle at bottom left,
+      var(--silverA),
+      var(--silverA),
+      var(--silverA),
+      var(--silverB),
+      var(--silverB)
+    );
+}
+
+.top_item:nth-child(4) > .profile_circle {
+  background-image: linear-gradient(black, black),
+    radial-gradient(
+      circle at bottom left,
+      var(--bronzeA),
+      var(--bronzeA),
+      var(--bronzeA),
+      var(--bronzeB),
+      var(--bronzeB)
+    );
 }
 
 .item_name {
