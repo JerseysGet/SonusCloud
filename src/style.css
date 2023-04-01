@@ -26,6 +26,13 @@
   --silverB: #8e9eab;
   --bronzeA: #b79891;
   --bronzeB: #94716b;
+
+  --primary: #c31432;
+  --primary-desat: #bb1c37;
+  --secondary: #240b36;
+  --secondary-desat: #33154c;
+
+  --navbar-color: #080808;
 }
 
 * {
@@ -42,7 +49,7 @@ body {
 }
 
 .navbar {
-  background-color: rgba(32, 32, 32);
+  background-color: var(--navbar-color);
   display: flex;
   padding: 1.8rem;
   user-select: none;
@@ -54,7 +61,6 @@ body {
 }
 
 .logo {
-  filter: invert(100%);
   width: 10vw;
 }
 
@@ -75,17 +81,17 @@ nav > a {
 
 nav > a:hover {
   font-weight: 600;
-  color: var(--primary-accent);
+  color: var(--primary-desat);
 }
 
 nav > a.selected {
-  color: var(--primary-accent);
+  color: var(--primary-desat);
 }
 
 nav .dot {
   width: 7px;
   height: 7px;
-  background: var(--primary-accent);
+  background: var(--primary-desat);
   border-radius: 50%;
   transform: translateX(30px);
   transition: 0.4s;
@@ -273,7 +279,7 @@ nav > a:nth-child(3):hover ~ .dot {
   grid-template-columns: repeat(10, 1fr);
   align-items: center;
   justify-items: center;
-  background-color: rgba(255, 101, 101, 0.386);
+  background-color: var(--secondary);
 }
 
 @keyframes pan {
@@ -301,13 +307,13 @@ nav > a:nth-child(3):hover ~ .dot {
   background-size: 160%;
   animation: pan 3s 1 linear;
   background-position: 65% 5%;
-  box-shadow: 1.3rem 1.3rem 0.4rem rgb(16, 16, 16);
+  box-shadow: 1.3rem 1.3rem 0.4rem rgb(0, 0, 0, 0.75);
   transition: 0.4s;
 }
 
 .card:hover {
   transform: translate3d(-1.3rem, -1.3rem, -1.3rem);
-  box-shadow: 2rem 2rem 1rem rgb(32, 32, 32);
+  box-shadow: 2rem 2rem 1rem rgba(0, 0, 0, 0.55);
 }
 
 .artist_info {
@@ -330,4 +336,10 @@ nav > a:nth-child(3):hover ~ .dot {
   font-family: "OpenSansLight";
   margin-top: 1.6rem;
   font-size: 1.2rem;
+}
+
+.transition {
+  height: 10vw;
+  width: 100%;
+  background: linear-gradient(var(--secondary), black);
 }
