@@ -248,13 +248,11 @@ nav > a:nth-child(3):hover ~ .dot {
 }
 
 .artists {
-  /* font-size: 2rem; */
   display: grid;
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(4, 25vw);
   grid-template-rows: repeat(2, 50vh);
-  /* gap: 0; */
   grid-template-areas:
     ".  a2 .  a4"
     "a1 .  a5 a3";
@@ -366,7 +364,6 @@ nav > a:nth-child(3):hover ~ .dot {
   grid-area: 1/2/1/4;
   width: 17vw;
   aspect-ratio: 2/3;
-  /* background-color: rgb(32, 32, 32); */
   border-radius: 1.2rem;
   display: flex;
   align-content: center;
