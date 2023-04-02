@@ -1,3 +1,4 @@
+import sys
 import spotipy
 import requests
 from rich import print
@@ -7,8 +8,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 spotify = spotipy.Spotify(
     client_credentials_manager=SpotifyClientCredentials())
 
-artist_name = "chainsmokers"
-artist_id = "69GGBxA162lTqCwzJG5jLp"
+artist_name = sys.argv[1]
+artist_id = sys.argv[2]
 
 albums = spotify.artist_albums(artist_id, album_type='album')
 
