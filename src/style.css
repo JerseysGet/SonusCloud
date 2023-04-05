@@ -47,6 +47,10 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   background-color: var(--navbar-color);
   display: flex;
@@ -443,46 +447,48 @@ nav > a:nth-child(3):hover ~ .dot {
   transform: scale(1.05);
   box-shadow: 1rem 2rem 2.3rem rgba(0, 0, 0, 0.2);
 }
-.album > .container {
+
+.album > a > .container {
   width: 100%;
   height: 100%;
 }
-.album > .container > .top {
+.album > a > .container > .top {
   height: 80%;
   width: 100%;
 }
 
-.album > .container > .top > img {
+.album > a > .container > .top > img {
   height: 100%;
 }
 
-.album > .container > .bottom {
+.album > a > .container > .bottom {
   width: 100%;
   background: white;
+  color: black;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.album > .container > .bottom > .details {
+.album > a > .container > .bottom > .details {
   padding: 1rem;
   width: 75%;
 }
 
-.album > .container > .bottom > .details > h1 {
+.album > a > .container > .bottom > .details > h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.album > .container > .bottom > .album_button {
+.album > a > .container > .bottom > .album_button {
   margin-right: 2rem;
   opacity: 0;
   transition: 0.3s ease-in-out;
   transform: translateX(-3.5rem);
 }
 
-.album:hover > .container > .bottom > .album_button {
+.album:hover > a > .container > .bottom > .album_button {
   transform: translateX(0) scale(1.3);
   opacity: 1;
 }
@@ -534,7 +540,6 @@ nav > a:nth-child(3):hover ~ .dot {
   width: 100%;
   padding-top: 10vh;
   background: linear-gradient(200deg, var(--primary-desat) 10%, black 90%);
-
 }
 
 .album_hero {
