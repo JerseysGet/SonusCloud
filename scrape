@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-
-python3 scrape.py $1 $2 > albums.html
-
-prettier --write albums.html
-
