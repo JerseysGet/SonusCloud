@@ -595,17 +595,16 @@ nav > a:nth-child(3):hover ~ .dot {
 }
 
 .album_name {
-  margin-top: 5rem;
+  margin-top: 2rem;
   font-family: Staaliches;
-  /* font-weight: 400; */
   font-size: 10rem;
 }
 
 .album_details {
   font-family: OpenSansLight;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   margin-right: 20rem;
-  text-align: right;
+  text-align: left;
 }
 
 .release_date {
