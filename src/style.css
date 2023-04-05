@@ -529,3 +529,159 @@ nav > a:nth-child(3):hover ~ .dot {
   margin-left: 1.7rem;
   letter-spacing: 0.2rem;
 }
+
+.album_container {
+  width: 100%;
+  padding-top: 10vh;
+  background: linear-gradient(200deg, var(--primary-desat) 10%, black 90%);
+
+}
+
+.album_hero {
+  padding-top: 15vh;
+  padding-bottom: 25vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.album_art_border {
+  height: 50vh;
+  aspect-ratio: 1/1;
+  background-color: rgba(30, 30, 30, 0);
+  position: relative;
+  border-radius: 2.2rem;
+  margin-left: 5rem;
+}
+
+.album_art {
+  background-size: cover;
+  border-radius: inherit;
+  inset: 0.3rem;
+  position: absolute;
+}
+
+.album_art_border:hover:before {
+  opacity: 1;
+}
+
+.album_art_border:before {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 5%,
+    #e5546c,
+    rgba(0, 0, 0, 0) 99%
+  );
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 0;
+}
+
+.album_info {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 60%;
+  text-align: left;
+  margin-left: 4rem;
+}
+
+.album_name {
+  margin-top: 5rem;
+  font-family: Staaliches;
+  /* font-weight: 400; */
+  font-size: 10rem;
+}
+
+.album_details {
+  font-family: OpenSansLight;
+  margin-top: 2.5rem;
+  margin-right: 20rem;
+  text-align: right;
+}
+
+.release_date {
+  font-size: 2rem;
+}
+
+.song_count {
+  margin-top: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.song_label {
+  font-family: OpenSans;
+  font-weight: 800;
+  font-size: 7rem;
+  text-align: left;
+  margin-left: 4rem;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+}
+
+.track_list {
+  margin-top: 2rem;
+  margin-left: 6rem;
+  font-family: OpenSans;
+}
+
+.track {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 5vh;
+  background-size: 800% 800%;
+  border-radius: 5rem;
+  transition: 0.5s;
+  border: double 4px transparent;
+  background-image: linear-gradient(rgb(20, 20, 20), rgb(20, 20, 20)),
+    linear-gradient(
+      137.48deg,
+      #bb1c37 0%,
+      #8f51ea 33%,
+      #0044ff 67%,
+      #148700 100%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  letter-spacing: 0.25rem;
+}
+
+.track:hover {
+  animation: gradient 5s ease infinite;
+  transform: scale(1.05);
+  letter-spacing: 0.3rem;
+}
+
+.track_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
