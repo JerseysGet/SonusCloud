@@ -388,7 +388,7 @@ nav > a:nth-child(3):hover ~ .dot {
 }
 
 .artist_info {
-  grid-area: 1/5/1/9;
+  grid-area: 1/5/1/10;
   text-align: left;
 }
 
