@@ -45,6 +45,7 @@ body {
   font-weight: 350;
   color: white;
   text-align: center;
+  overflow-x: hidden;
 }
 
 a {
