@@ -104,7 +104,7 @@ for album in albums["items"]:
         </div>
 
         <footer>
-          <a href="./about.html">ABOUT</a>
+          <a href="../../../about.html">ABOUT</a>
           <div class="text">Made by Praneeth Jain & Mohammed Faisal</div>
           <img src="../../../assets/images/logo_small_light.png" alt="logo" />
         </footer>
@@ -205,7 +205,7 @@ x = f"""
     </div>
 
     <footer>
-      <a href="./about.html">ABOUT</a>
+      <a href="../../about.html">ABOUT</a>
       <div class="text">Made by Praneeth Jain & Mohammed Faisal</div>
       <img src="../../assets/images/logo_small_light.png" alt="logo" />
     </footer>
