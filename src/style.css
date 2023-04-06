@@ -422,6 +422,7 @@ nav > a:nth-child(3):hover ~ .dot {
     "header header header"
     "album album album";
   justify-items: center;
+  padding-bottom: 2rem;
 }
 
 .albums > .header {
@@ -625,13 +626,9 @@ nav > a:nth-child(3):hover ~ .dot {
   margin-left: 4rem;
 }
 
-.track {
-  display: flex;
-  width: 100%;
-}
-
 .track_list {
   margin-top: 2rem;
+  padding-bottom: 5rem;
   margin-left: 6rem;
   font-family: OpenSans;
 }
@@ -693,14 +690,13 @@ ol {
 
 footer {
   background-color: var(--navbar-color);
-  height: 5vh;
-  font-size: 1.2rem;
-  font-family: Inter;
+  height: 7.5vh;
+  font-size: 1.5rem;
+  font-family: OpenSans;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  margin-top: 1rem;
+  padding: 0 2.5rem;
 }
 
 footer > a {
@@ -717,5 +713,5 @@ footer > img {
 }
 
 footer > .text {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
