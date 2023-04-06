@@ -2,7 +2,6 @@ import spotipy
 import requests
 import datetime
 from pathlib import Path
-from rich import print
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
@@ -20,7 +19,7 @@ Path(f"./src/artists/{artist_name}/albums").mkdir(parents=True, exist_ok=True)
 Path(f"./src/assets/images/{artist_name}").mkdir(parents=True, exist_ok=True)
 
 with open(f"./src/assets/images/{artist_name}/{artist_name}.jpg", "wb") as f:
-   f.write(requests.get(artist["images"][0]["url"]).content)
+    f.write(requests.get(artist["images"][0]["url"]).content)
 
 albums = spotify.artist_albums(artist_id, album_type="album")
 
@@ -103,6 +102,12 @@ for album in albums["items"]:
             </ol>
           </div>
         </div>
+
+        <footer>
+          <a href="./about.html">ABOUT</a>
+          <div class="text">Made by Praneeth Jain & Mohammed Faisal</div>
+          <img src="../../../assets/images/logo_small_light.png" alt="logo" />
+        </footer>
       </body>
     </html>
     """
@@ -198,6 +203,12 @@ x = f"""
           {newline.join(L)}
       </div>
     </div>
+
+    <footer>
+      <a href="./about.html">ABOUT</a>
+      <div class="text">Made by Praneeth Jain & Mohammed Faisal</div>
+      <img src="../../assets/images/logo_small_light.png" alt="logo" />
+    </footer>
   </body>
 </html>
 """
