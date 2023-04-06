@@ -49,6 +49,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .navbar {
@@ -688,4 +689,32 @@ ol {
   100% {
     background-position: 0% 50%;
   }
+}
+
+footer {
+  background-color: var(--navbar-color);
+  height: 5vh;
+  font-size: 1.2rem;
+  font-family: Inter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+footer > a {
+  transition: 0.2s;
+}
+
+footer > a:hover {
+  color: var(--primary);
+  font-weight: bolder;
+}
+
+footer > img {
+  height: 1.6rem;
+}
+
+footer > .text {
+  font-size: 1rem;
 }
