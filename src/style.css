@@ -652,13 +652,14 @@ footer {
   height: 7.5vh;
   font-size: 1.5rem;
   font-family: OpenSans;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding: 0 2.5rem;
 }
 
 footer > a {
+  justify-self: left;
   transition: 0.2s;
 }
 
@@ -668,6 +669,7 @@ footer > a:hover {
 }
 
 footer > img {
+  justify-self: right;
   height: 1.6rem;
 }
 
