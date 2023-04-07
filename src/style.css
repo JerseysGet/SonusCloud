@@ -497,10 +497,6 @@ nav > a:nth-child(3):hover ~ .dot {
   letter-spacing: 0.2rem;
 }
 
-.artist_page_background {
-  background: linear-gradient(-170deg, var(--background-light), black);
-}
-
 .album_container {
   width: 100%;
   padding-top: 10vh;
