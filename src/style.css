@@ -727,3 +727,31 @@ footer > .text {
   border-radius: 50%;
   transition: 0.6s;
 }
+
+.about_container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  grid-template-areas:
+    "page_about page_about"
+    "  about1      about2 ";
+}
+
+.page_about {
+  grid-area: page_about;
+}
+
+.about1 {
+  grid-area: about1;
+}
+
+.about2 {
+  grid-area: about2;
+}
+
+.about_container > * {
+  border: 1px solid white;
+}
