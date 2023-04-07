@@ -95,7 +95,7 @@ for album in albums["items"]:
             </div>
           </div>
 
-          <div class="track_container">
+          <div class="track_container" id="tracks">
             <div class="song_label">Songs</div>
             <ol class="track_list">
               {newline.join(tracks_html)}
