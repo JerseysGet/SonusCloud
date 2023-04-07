@@ -28,6 +28,7 @@
 
   --primary: #c31432;
   --primary-desat: #bb1c37;
+  --primary-light: #e5546c;
   --secondary: #240b36;
   --secondary-desat: #33154c;
 
@@ -605,7 +606,7 @@ nav > a:nth-child(3):hover ~ .dot {
   background: linear-gradient(
     45deg,
     rgba(0, 0, 0, 0) 5%,
-    #e5546c,
+    var(--primary-light),
     rgba(0, 0, 0, 0) 99%
   );
   border-radius: inherit;
