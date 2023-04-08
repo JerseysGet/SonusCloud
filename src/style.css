@@ -729,8 +729,9 @@ footer > .text {
 }
 
 .about_container {
+  padding-top: 11vh;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -738,20 +739,20 @@ footer > .text {
   grid-template-areas:
     "page_about page_about"
     "  about1      about2 ";
+  --opacity: rgba(255, 255, 255, 0.3);
 }
 
 .page_about {
   grid-area: page_about;
+  border-bottom: 1px solid var(--opacity);
 }
 
 .about1 {
   grid-area: about1;
+  border-right: 1px solid var(--opacity);
 }
 
 .about2 {
   grid-area: about2;
-}
-
-.about_container > * {
-  border: 1px solid white;
+  border-left: 1px solid var(--opacitty);
 }
