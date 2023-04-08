@@ -29,6 +29,7 @@
   --primary: #c31432;
   --primary-desat: #bb1c37;
   --primary-light: #e5546c;
+  --primary-analogue: #eb3948;
   --secondary: #240b36;
   --secondary-desat: #33154c;
 
@@ -784,6 +785,9 @@ footer > .text {
   width: 100%;
   height: 100%;
   border-left: 1px solid var(--opacity);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .name {
@@ -918,4 +922,38 @@ footer > .text {
 
 .card4:hover .discord {
   fill: white;
+}
+
+.no_links {
+  margin-top: 4rem;
+  letter-spacing: 0.1rem;
+  font-size: 2em;
+  font-family: "OpenSans";
+  position: relative;
+  width: 17.5%;
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  color: var(--primary-analogue);
+  width: 0%;
+  inset: 0;
+  border-right: 0.15rem solid var(--primary-analogue);
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.actual-text {
+  transition: 1.5s;
+}
+
+.no_links:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--primary-analogue));
+}
+
+.no_links:hover .actual-text {
+  opacity: 0;
+  transition: 0.2s;
 }
