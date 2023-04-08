@@ -749,11 +749,14 @@ footer > .text {
 
 .page_about {
   grid-area: page_about;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about_container > .creators {
   grid-area: creators;
-  margin: 3rem 0;
+  margin: 5rem 0;
   font-size: 4rem;
   font-weight: 400;
 }
@@ -761,13 +764,15 @@ footer > .text {
 .page_about > h1 {
   font-size: 4rem;
   margin: 2rem 0;
+  letter-spacing: 0.2rem;
 }
 
 .page_about > p {
-  margin: 0 5rem;
-  font-size: 1.3rem;
-  font-family: sans-serif;
-  font-weight: 300;
+  width: 65%;
+  font-size: 1.5rem;
+  font-family: "OpenSansLight";
+  font-weight: 50;
+  line-height: 2rem;
 }
 
 .about1 {
@@ -925,7 +930,7 @@ footer > .text {
 }
 
 .no_links {
-  margin-top: 4rem;
+  margin-top: 5rem;
   letter-spacing: 0.1rem;
   font-size: 2em;
   font-family: "OpenSans";
@@ -950,7 +955,7 @@ footer > .text {
 
 .no_links:hover .hover-text {
   width: 100%;
-  filter: drop-shadow(0 0 23px var(--primary-analogue));
+  filter: drop-shadow(0 0 1.5rem var(--primary-analogue));
 }
 
 .no_links:hover .actual-text {
