@@ -736,7 +736,7 @@ footer > .text {
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr 1fr 3fr;
+  grid-template-rows: 2fr 1fr 2.4fr;
 
   grid-template-areas:
     "page_about page_about"
@@ -761,7 +761,7 @@ footer > .text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .name {
