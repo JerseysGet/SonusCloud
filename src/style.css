@@ -735,7 +735,7 @@ footer > .text {
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 2fr 3fr;
 
   grid-template-areas:
     "page_about page_about"
@@ -745,6 +745,19 @@ footer > .text {
 .page_about {
   grid-area: page_about;
   border-bottom: 1px solid var(--opacity);
+}
+
+.page_about > h1 {
+  font-size: 4rem;
+  margin: 2rem 0;
+}
+
+.page_about > p {
+  margin: 0 5rem;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  /* text-align: left; */
 }
 
 .about1 {
