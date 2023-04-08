@@ -34,6 +34,7 @@
 
   --navbar-color: #080808;
   --background-light: #131313;
+  --opacity: rgba(255, 255, 255, 0.3);
 }
 
 * {
@@ -739,7 +740,6 @@ footer > .text {
   grid-template-areas:
     "page_about page_about"
     "  about1      about2 ";
-  --opacity: rgba(255, 255, 255, 0.3);
 }
 
 .page_about {
