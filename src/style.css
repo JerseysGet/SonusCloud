@@ -734,10 +734,9 @@ footer > .text {
   padding-top: 11vh;
   padding-bottom: 5vh;
   width: 100vw;
-  height: 90vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2fr 1fr 2.4fr;
+  grid-template-rows: repeat(3, 1fr);
 
   grid-template-areas:
     "page_about page_about"
@@ -756,7 +755,7 @@ footer > .text {
 
 .about_container > .creators {
   grid-area: creators;
-  margin: 5rem 0;
+  /* margin: 5rem 0; */
   font-size: 4rem;
   font-weight: 400;
 }
