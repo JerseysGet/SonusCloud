@@ -755,7 +755,6 @@ footer > .text {
 
 .about_container > .creators {
   grid-area: creators;
-  /* margin: 5rem 0; */
   font-size: 4rem;
   font-weight: 400;
 }
