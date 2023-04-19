@@ -165,22 +165,9 @@ x = f"""
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artists | {name}</title>
     <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
   </head>
   <body>
-    <div class="navbar">
-      <img
-        src="../../assets/images/logo_big_light.png"
-        alt="SoC"
-        class="logo"
-      />
-      <nav>
-        <a href="../../index.html">HOME</a>
-        <a href="../../artists.html">ARTISTS</a>
-        <a href="../../about.html">ABOUT</a>
-        <div class="dot"></div>
-      </nav>
-    </div>
-
     <div class="artist_container">
       <div class="hero">
         <div
