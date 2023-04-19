@@ -61,4 +61,23 @@ const insert_navbar = () => {
   body.insertBefore(navbar, body.firstChild);
 };
 
+const insert_footer = () => {
+  const footer = document.createElement("footer");
+
+  const footer_about_link = document.createElement("a");
+  footer_about_link.href = get_path("about.html");
+  footer_about_link.textContent = "ABOUT";
+
+  const footer_text = document.createElement("div");
+  footer_text.classList.add("text");
+  footer_text.textContent = "Made by Praneeth & Faisal";
+
+  const footer_logo = document.createElement("img");
+  footer_logo.src = get_path("assets/images/logo_small_light.png");
+  footer_logo.alt = "logo";
+
+  footer.append(footer_about_link, footer_text, footer_logo);
+  body.appendChild(footer);
+};
 insert_navbar();
+insert_footer();

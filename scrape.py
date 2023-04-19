@@ -102,7 +102,6 @@ for album in albums["items"]:
             </ol>
           </div>
         </div>
-
         <footer>
           <a href="../../../about.html">ABOUT</a>
           <div class="text">Made by Praneeth & Faisal</div>
@@ -190,12 +189,6 @@ x = f"""
           {newline.join(L)}
       </div>
     </div>
-
-    <footer>
-      <a href="../../about.html">ABOUT</a>
-      <div class="text">Made by Praneeth & Faisal</div>
-      <img src="../../assets/images/logo_small_light.png" alt="logo" />
-    </footer>
   </body>
 </html>
 """
