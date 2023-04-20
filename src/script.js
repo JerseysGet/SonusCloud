@@ -89,5 +89,26 @@ const insert_footer = () => {
   footer.append(footer_about_link, footer_text, footer_logo);
   body.appendChild(footer);
 };
+
+const get_song_data = (song_name) => {
+  const url = `https://itunes.apple.com/search?term=${song_name.replace(
+    /\s+/g,
+    "+"
+  )}&media=music&limit=10`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      return data.results.map(
+        ({ trackName, artistName, artworkUrl100, trackTimeMillis }) => ({
+          trackName,
+          artistName,
+          artworkUrl100,
+          trackTimeMillis,
+        })
+      );
+    })
+    .catch((error) => console.log(error));
+};
+
 insert_navbar();
 insert_footer();
