@@ -25,6 +25,10 @@ const get_nav = (selected) => {
   about_link_node.href = get_path("about.html");
   about_link_node.textContent = "ABOUT";
 
+  const search_link_node = document.createElement("a");
+  search_link_node.href = get_path("search.html");
+  search_link_node.textContent = "SEARCH";
+
   const dot_node = document.createElement("div");
   dot_node.classList.add("dot");
 
@@ -36,7 +40,13 @@ const get_nav = (selected) => {
     about_link_node.classList.add("selected");
   }
 
-  nav.append(index_link_node, artists_link_node, about_link_node, dot_node);
+  nav.append(
+    index_link_node,
+    artists_link_node,
+    about_link_node,
+    search_link_node,
+    dot_node
+  );
 
   return nav;
 };
@@ -52,7 +62,7 @@ const insert_navbar = () => {
   navbar.appendChild(navbar_logo);
   const filename = window.location.pathname.split("/").pop().split(".")[0];
 
-  if (["about", "artists", "index"].includes(filename)) {
+  if (["about", "artists", "index", "search"].includes(filename)) {
     navbar.appendChild(get_nav(filename));
   } else {
     navbar.appendChild(get_nav());
