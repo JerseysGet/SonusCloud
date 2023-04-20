@@ -51,15 +51,15 @@ const get_nav = (selected) => {
   return nav;
 };
 
-const insert_navbar = () => {
+const insertNavbar = () => {
   const navbar = document.createElement("div");
   navbar.classList.add("navbar");
 
-  const navbar_logo = document.createElement("img");
-  navbar_logo.src = get_path("assets/images/logo_big_light.png");
-  navbar_logo.alt = "SoC";
-  navbar_logo.classList.add("logo");
-  navbar.appendChild(navbar_logo);
+  const logo = document.createElement("img");
+  logo.src = get_path("assets/images/logo_big_light.png");
+  logo.alt = "SoC";
+  logo.classList.add("logo");
+  navbar.appendChild(logo);
   const filename = window.location.pathname.split("/").pop().split(".")[0];
 
   if (["about", "artists", "index", "search"].includes(filename)) {
@@ -71,27 +71,27 @@ const insert_navbar = () => {
   body.insertBefore(navbar, body.firstChild);
 };
 
-const insert_footer = () => {
+const insertFooter = () => {
   const footer = document.createElement("footer");
 
-  const footer_about_link = document.createElement("a");
-  footer_about_link.href = get_path("about.html");
-  footer_about_link.textContent = "ABOUT";
+  const aboutLink = document.createElement("a");
+  aboutLink.href = get_path("about.html");
+  aboutLink.textContent = "ABOUT";
 
-  const footer_text = document.createElement("div");
-  footer_text.classList.add("text");
-  footer_text.textContent = "Made by Praneeth & Faisal";
+  const footerText = document.createElement("div");
+  footerText.classList.add("text");
+  footerText.textContent = "Made by Praneeth & Faisal";
 
-  const footer_logo = document.createElement("img");
-  footer_logo.src = get_path("assets/images/logo_small_light.png");
-  footer_logo.alt = "logo";
+  const Logo = document.createElement("img");
+  Logo.src = get_path("assets/images/logo_small_light.png");
+  Logo.alt = "logo";
 
-  footer.append(footer_about_link, footer_text, footer_logo);
+  footer.append(aboutLink, footerText, Logo);
   body.appendChild(footer);
 };
 
-const get_song_data = (song_name) => {
-  const url = `https://itunes.apple.com/search?term=${song_name.replace(
+const getSongData = (songName) => {
+  const url = `https://itunes.apple.com/search?term=${songName.replace(
     /\s+/g,
     "+"
   )}&media=music&limit=10`;
@@ -110,5 +110,66 @@ const get_song_data = (song_name) => {
     .catch((error) => console.log(error));
 };
 
-insert_navbar();
-insert_footer();
+const isVisible = (el) => {
+  let rect = el.getBoundingClientRect();
+
+  return rect.top >= 0 && rect.bottom <= window.innerHeight;
+};
+
+const isInvisible = (el) => {
+  let rect = el.getBoundingClientRect();
+
+  return rect.top >= window.innerHeight || rect.bottom <= 0;
+};
+
+const onVisibilityChange = (el, onVisible, onInvisible) => {
+  let oldVisible = true;
+  let oldInvisible = true;
+  return () => {
+    let visible = isVisible(el);
+    let invisible = isInvisible(el);
+
+    if (!visible && !invisible) return;
+
+    if (oldVisible && invisible) onInvisible();
+    else if (oldInvisible && visible) setTimeout(onVisible, 150);
+
+    oldVisible = visible;
+    oldInvisible = invisible;
+  };
+};
+
+const animateHeaders = () => {
+  const headers = document.querySelectorAll(".header");
+  headers.forEach((h) => {
+    const final = h.textContent;
+    let happening = false;
+    const handler = onVisibilityChange(
+      h,
+      () => {
+        h.textContent = "";
+        if (happening) return;
+        happening = true;
+        const increment = (cur_pos) => {
+          if (cur_pos == final.length) {
+            happening = false;
+          } else {
+            h.textContent += final.charAt(cur_pos);
+            setTimeout(increment.bind(null, cur_pos + 1), 69);
+          }
+        };
+        increment(0);
+      },
+      () => {
+        h.textContent = "";
+      }
+    );
+    ["DOMContentLoaded", "load", "scroll", "resize"].forEach((ev) => {
+      addEventListener(ev, handler, false);
+    });
+  });
+};
+
+insertNavbar();
+insertFooter();
+animateHeaders();
