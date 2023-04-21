@@ -38,6 +38,8 @@ const getNav = (selected) => {
     artistsLinkNode.classList.add("selected");
   } else if (selected === "about") {
     aboutLinkNode.classList.add("selected");
+  } else if (selected === "search") {
+    searchLinkNode.classList.add("selected");
   }
 
   nav.append(
