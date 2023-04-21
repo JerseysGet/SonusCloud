@@ -97,7 +97,7 @@ const getSongData = (songName) => {
     /\s+/g,
     "+"
   )}&media=music&limit=10`;
-  fetch(url)
+  return fetch(url)
     .then((response) => response.json())
     .then((data) => {
       return data.results.map(
