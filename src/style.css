@@ -997,20 +997,14 @@ footer > .text {
 
 .search_bar_container {
   display: flex;
-  gap: 1rem;
-  background-color: red;
+  gap: 2rem;
   height: 4rem;
   width: 45vw;
   align-items: center;
   justify-content: flex-start;
   border-radius: 3rem;
   border: double 4px transparent;
-  background-image: linear-gradient(rgb(20, 20, 20), rgb(20, 20, 20)),
-    linear-gradient(
-      175deg,
-      var(--primary-desat) 10%,
-      var(--secondary-desat) 80%
-    );
+  background-color: rgb(20, 20, 20);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -1020,17 +1014,27 @@ footer > .text {
   display: block;
   width: 2rem;
   fill: #757575;
+  transition: 0.2s;
 }
 
 .search_bar {
-  font-family: sans-serif;
+  font-family: OpenSans;
   font-size: 2rem;
   border-style: hidden;
   height: 70%;
   background-color: transparent;
   color: white;
+  transition: 0.2s;
 }
 
 .search_bar:focus {
   outline: none;
+}
+
+.search_bar::placeholder {
+  transition: 0.3s;
+}
+
+.search_bar:focus::placeholder {
+  opacity: 0;
 }
