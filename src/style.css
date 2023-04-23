@@ -977,7 +977,7 @@ footer > .text {
 .search_page {
   display: flex;
   flex-direction: column;
-  justify-content: flex-sand;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
 }
@@ -993,4 +993,44 @@ footer > .text {
   margin: 2rem 0;
   letter-spacing: 0.2rem;
   width: 100%;
+}
+
+.search_bar_container {
+  display: flex;
+  gap: 1rem;
+  background-color: red;
+  height: 4rem;
+  width: 45vw;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 3rem;
+  border: double 4px transparent;
+  background-image: linear-gradient(rgb(20, 20, 20), rgb(20, 20, 20)),
+    linear-gradient(
+      175deg,
+      var(--primary-desat) 10%,
+      var(--secondary-desat) 80%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.search_bar_container > svg {
+  margin-left: 1.5rem;
+  display: block;
+  width: 2rem;
+  fill: #757575;
+}
+
+.search_bar {
+  font-family: sans-serif;
+  font-size: 2rem;
+  border-style: hidden;
+  height: 70%;
+  background-color: transparent;
+  color: white;
+}
+
+.search_bar:focus {
+  outline: none;
 }
