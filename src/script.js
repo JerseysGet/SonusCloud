@@ -92,7 +92,7 @@ const insertFooter = () => {
   body.appendChild(footer);
 };
 
-const getSongData = (songName) => {
+const getSongData = async (songName) => {
   const url = `https://itunes.apple.com/search?term=${songName.replace(
     /\s+/g,
     "+"
