@@ -172,20 +172,26 @@ const animateHeaders = () => {
   });
 };
 
-const searchBarContainer = document.querySelector(".search_bar_container");
-const searchIcon = document.querySelector(".search_bar_container > svg");
-const searchBar = document.querySelector(".search_bar");
-searchBar.addEventListener("focus", (event) => {
-  searchIcon.style.fill = "white";
-  searchBarContainer.style.backgroundImage = `linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10)), linear-gradient(175deg, var(--primary-desat) 10%, var(--secondary-desat) 80%)`;
-});
+const animateSearchBar = () => {
+  const searchBarContainer = document.querySelector(".search_bar_container");
+  const searchIcon = document.querySelector(".search_bar_container > svg");
+  const searchBar = document.querySelector(".search_bar");
+  searchBar.addEventListener("focus", (event) => {
+    searchIcon.style.fill = "white";
+    searchBarContainer.style.backgroundImage = `linear-gradient(rgb(10, 10, 10), rgb(10, 10, 10)), linear-gradient(175deg, var(--primary-desat) 10%, var(--secondary-desat) 80%)`;
+  });
 
-searchBar.addEventListener("blur", (event) => {
-  searchIcon.style.fill = "#757575";
-  searchBarContainer.style.backgroundImage = "";
-  searchBarContainer.style.backgroundColor = rgb(20, 20, 20);
-});
-
+  searchBar.addEventListener("blur", (event) => {
+    searchIcon.style.fill = "#757575";
+    searchBarContainer.style.backgroundImage = "";
+    searchBarContainer.style.backgroundColor = rgb(20, 20, 20);
+  });
+};
+console.log(window.location.pathname);
 insertNavbar();
 insertFooter();
 animateHeaders();
+
+if (window.location.pathname === "/src/search.html") {
+  animateSearchBar();
+}
