@@ -973,3 +973,24 @@ footer > .text {
   opacity: 0;
   transition: 0.2s;
 }
+
+.search_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-sand;
+  align-items: center;
+  height: 100vh;
+}
+
+.search_text {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search_text > h1 {
+  font-size: 5.5rem;
+  margin: 2rem 0;
+  letter-spacing: 0.2rem;
+  width: 100%;
+}
