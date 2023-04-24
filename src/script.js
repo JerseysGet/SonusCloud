@@ -147,7 +147,7 @@ const populateResults = async (
   if (applyFilters) {
     if (!allowExplicit) {
       songsData = songsData.filter((songData) => {
-        return songData.trackExplicitness === "notExplicit";
+        return songData.trackExplicitness !== "explicit";
       });
     }
     if (maxDuration) {
@@ -264,6 +264,22 @@ const animateSearchBar = () => {
     searchBarContainer.style.backgroundColor = "rgb(20, 20, 20)";
   });
 };
+
+const animateInputs = () => {
+  const reviewInputs = document.querySelectorAll(".review_input");
+  reviewInputs.forEach((el) => {
+    el.addEventListener("focus", () => {
+      el.style.backgroundColor = "#0A0A0A";
+    });
+
+    el.addEventListener("blur", () => {
+      el.style.backgroundColor = "rgb(20, 20, 20)";
+    });
+  });
+  console.table(reviewInputs);
+};
+
+animateInputs();
 insertNavbar();
 insertFooter();
 animateHeaders();
