@@ -1188,3 +1188,11 @@ input[type="number"] {
 .filters_container > .minutes:focus {
   outline: none;
 }
+
+.not_found {
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-family: "Inter";
+  font-size: 2rem;
+}

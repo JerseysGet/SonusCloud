@@ -143,6 +143,13 @@ const populateResults = async (
       });
     }
   }
+  if (songsData.length === 0) {
+    let not_found_div = document.createElement("div");
+    not_found_div.classList.add("not_found");
+    not_found_div.textContent = "Sorry! No songs found.";
+    resultsContainer.appendChild(not_found_div);
+    return;
+  }
   songsData.slice(0, 10).forEach((songData) => {
     let search_card = document.createElement("div");
     search_card.classList.add("search_card");
