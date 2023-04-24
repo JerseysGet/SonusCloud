@@ -1058,8 +1058,8 @@ footer > .text {
   width: 20rem;
   aspect-ratio: 3 / 4;
   border-radius: 1.25rem;
-  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.3);
   transition: 0.4s;
+  margin: 1.5rem;
 }
 
 .search_card:hover {
