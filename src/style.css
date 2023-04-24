@@ -979,7 +979,7 @@ footer > .text {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .search_text {
@@ -1067,7 +1067,7 @@ footer > .text {
 }
 
 .search_card > .album_cover {
-  background: url("./assets/images/kitri/a1.jpg");
+  /* background: url("./assets/images/kitri/a1.jpg"); */
   background-size: contain;
   width: 15rem;
   height: 15rem;
