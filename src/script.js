@@ -29,6 +29,19 @@ const getNav = (selected) => {
   searchLinkNode.href = getPath("search.html");
   searchLinkNode.textContent = "SEARCH";
 
+  [indexLinkNode, artistsLinkNode, aboutLinkNode, searchLinkNode].forEach(
+    (node) => {
+      node.addEventListener("mouseenter", () => {
+        node.classList.add("nav_hover");
+        console.log("Entering");
+      });
+      node.addEventListener("mouseleave", () => {
+        node.classList.remove("nav_hover");
+        console.log("Leaving");
+      });
+    }
+  );
+
   const dotNode = document.createElement("div");
   dotNode.classList.add("dot");
 
