@@ -92,7 +92,7 @@ const insertFooter = () => {
   body.appendChild(footer);
 };
 
-const getSongData = async (songName) => {
+const getSongsData = async (songName) => {
   const url = `https://itunes.apple.com/search?term=${songName.replace(
     /\s+/g,
     "+"
@@ -100,16 +100,55 @@ const getSongData = async (songName) => {
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       return data.results.map(
-        ({ trackName, artistName, artworkUrl100, trackTimeMillis }) => ({
+        ({
           trackName,
           artistName,
           artworkUrl100,
           trackTimeMillis,
+          previewUrl,
+        }) => ({
+          trackName,
+          artistName,
+          artworkUrl100,
+          trackTimeMillis,
+          previewUrl,
         })
       );
     })
     .catch((error) => console.log(error));
+};
+
+const populateResults = async (songName) => {
+  const resultsContainer = document.querySelector(".results");
+  resultsContainer.innerHTML = "";
+  const songsData = await getSongsData(songName);
+  resultsContainer.chil;
+  songsData.forEach((songData) => {
+    let search_card = document.createElement("div");
+    search_card.classList.add("search_card");
+
+    let album_cover = document.createElement("div");
+    album_cover.classList.add("album_cover");
+    album_cover.style.backgroundImage = `url(${songData.artworkUrl100})`;
+
+    let title = document.createElement("div");
+    title.classList.add("title");
+    title.textContent = songData.trackName;
+
+    let subtitle = document.createElement("subtitle");
+    subtitle.classList.add("subtitle");
+    subtitle.textContent = songData.artistName;
+
+    let audio = document.createElement("audio");
+    audio.controls = "controls";
+    audio.src = songData.previewUrl;
+
+    search_card.append(album_cover, title, subtitle, audio);
+
+    resultsContainer.appendChild(search_card);
+  });
 };
 
 const isVisible = (el) => {
@@ -184,10 +223,21 @@ const animateSearchBar = () => {
   searchBar.addEventListener("blur", () => {
     searchIcon.style.fill = "#757575";
     searchBarContainer.style.backgroundImage = "";
-    searchBarContainer.style.backgroundColor = rgb(20, 20, 20);
+    searchBarContainer.style.backgroundColor = "rgb(20, 20, 20)";
   });
 };
 insertNavbar();
 insertFooter();
 animateHeaders();
-animateSearchBar();
+
+if (window.location.pathname === "/src/search.html") {
+  animateSearchBar();
+  const inp = document.querySelector("input");
+  inp.addEventListener("keyup", ({ key }) => {
+    if (key === "Enter") {
+      (async () => {
+        await populateResults(inp.value);
+      })();
+    }
+  });
+}
