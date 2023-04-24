@@ -124,7 +124,6 @@ const populateResults = async (songName) => {
   const resultsContainer = document.querySelector(".results");
   resultsContainer.innerHTML = "";
   const songsData = await getSongsData(songName);
-  resultsContainer.chil;
   songsData.forEach((songData) => {
     let search_card = document.createElement("div");
     search_card.classList.add("search_card");
