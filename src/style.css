@@ -61,6 +61,7 @@ a {
 
 .navbar {
   background-color: var(--navbar-color);
+  opacity: 85%;
   display: flex;
   padding: 1.8rem;
   user-select: none;
