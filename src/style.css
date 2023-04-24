@@ -351,7 +351,7 @@ nav > a:nth-child(4):hover ~ .dot {
   background-size: cover;
   animation: pan 3s 1 linear;
   background-position: 55% 5%;
-  box-shadow: 1.3rem 1.3rem 0.4rem rgb(0, 0, 0, 0.75);
+  box-shadow: 1.3rem 1.3rem 0.4rem rgba(0, 0, 0, 0.75);
   transition: 0.5s;
 }
 
@@ -1038,4 +1038,46 @@ footer > .text {
 
 .search_bar:focus::placeholder {
   opacity: 0;
+}
+
+.results {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  padding: 3rem;
+}
+
+.search_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  background-color: rgb(16, 16, 16);
+  width: 20rem;
+  aspect-ratio: 3 / 4;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.3);
+  transition: 0.4s;
+}
+
+.search_card:hover {
+  box-shadow: 0 0 4rem rgba(255, 255, 255, 0.3);
+}
+
+.search_card > .album_cover {
+  background: url("./assets/images/kitri/a1.jpg");
+  background-size: contain;
+  width: 15rem;
+  height: 15rem;
+  box-shadow: 0 0 8px 8px rgb(16, 16, 16) inset;
+}
+
+.search_card > .title {
+  font-size: 2rem;
+}
+
+.search_card > .subtitle {
+  margin-top: -2rem;
 }
