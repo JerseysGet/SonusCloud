@@ -1252,7 +1252,7 @@ textarea {
   float: right;
   cursor: pointer;
   font-size: 50px;
-  color: #666;
+  color: #202020;
 }
 
 .rating:not(:checked) > label:before {
@@ -1264,21 +1264,21 @@ textarea {
 .rating > input:checked ~ label:hover,
 .rating > input:checked ~ label:hover ~ label,
 .rating > label:hover ~ input:checked ~ label {
-  color: #e58e09;
+  color: #f4b400;
 }
 
 .rating:not(:checked) > label:hover,
 .rating:not(:checked) > label:hover ~ label {
-  color: #ff9e0b;
+  color: #fdd835;
 }
 
 .rating > input:checked ~ label {
-  color: #ffa723;
+  color: #fdd835;
 }
 
 .review_container > button {
   margin: 0.5rem;
-  background: rgb(16, 16, 16);
+  background: rgb(20, 20, 20);
   font-size: 1.3rem;
   font-family: "OpenSans";
   padding: 0.7rem 1.2rem;
