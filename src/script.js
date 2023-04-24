@@ -13,9 +13,9 @@ const getPath = (path) => {
 const getNav = (selected) => {
   const nav = document.createElement("nav");
 
-  const indeLinkNode = document.createElement("a");
-  indeLinkNode.href = getPath("index.html");
-  indeLinkNode.textContent = "HOME";
+  const indexLinkNode = document.createElement("a");
+  indexLinkNode.href = getPath("index.html");
+  indexLinkNode.textContent = "HOME";
 
   const artistsLinkNode = document.createElement("a");
   artistsLinkNode.href = getPath("artists.html");
@@ -33,7 +33,7 @@ const getNav = (selected) => {
   dotNode.classList.add("dot");
 
   if (selected === "index") {
-    indeLinkNode.classList.add("selected");
+    indexLinkNode.classList.add("selected");
   } else if (selected === "artists") {
     artistsLinkNode.classList.add("selected");
   } else if (selected === "about") {
@@ -43,7 +43,7 @@ const getNav = (selected) => {
   }
 
   nav.append(
-    indeLinkNode,
+    indexLinkNode,
     artistsLinkNode,
     aboutLinkNode,
     searchLinkNode,
