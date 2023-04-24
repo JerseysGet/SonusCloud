@@ -96,7 +96,7 @@ const getSongsData = async (songName) => {
   const url = `https://itunes.apple.com/search?term=${songName.replace(
     /\s+/g,
     "+"
-  )}&media=music&limit=10`;
+  )}&media=music`;
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -108,23 +108,42 @@ const getSongsData = async (songName) => {
           artworkUrl100,
           trackTimeMillis,
           previewUrl,
+          trackExplicitness,
         }) => ({
           trackName,
           artistName,
           artworkUrl100,
           trackTimeMillis,
           previewUrl,
+          trackExplicitness,
         })
       );
     })
     .catch((error) => console.log(error));
 };
 
-const populateResults = async (songName) => {
+const populateResults = async (
+  songName,
+  allowExplicit,
+  maxDuration,
+  applyFilters
+) => {
   const resultsContainer = document.querySelector(".results");
   resultsContainer.innerHTML = "";
-  const songsData = await getSongsData(songName);
-  songsData.forEach((songData) => {
+  let songsData = await getSongsData(songName);
+  if (applyFilters) {
+    if (!allowExplicit) {
+      songsData = songsData.filter((songData) => {
+        return songData.trackExplicitness === "notExplicit";
+      });
+    }
+    if (maxDuration) {
+      songsData = songsData.filter((songData) => {
+        return songData.trackTimeMillis < maxDuration * 60 * 1000;
+      });
+    }
+  }
+  songsData.slice(0, 10).forEach((songData) => {
     let search_card = document.createElement("div");
     search_card.classList.add("search_card");
 
@@ -232,11 +251,28 @@ animateHeaders();
 if (window.location.pathname === "/src/search.html") {
   animateSearchBar();
   const inp = document.querySelector("input");
+  const explicit_checkbox = document.querySelector(
+    ".explicit_content_checkbox"
+  );
+  const max_duration_input = document.querySelector(".minutes");
+  const apply_checkbox = document.querySelector(".apply_filters_checkbox");
   inp.addEventListener("keyup", ({ key }) => {
     if (key === "Enter") {
       (async () => {
-        await populateResults(inp.value);
+        await populateResults(
+          inp.value,
+          explicit_checkbox.checked,
+          max_duration_input.value,
+          apply_checkbox.checked
+        );
       })();
     }
   });
+
+  // const temp = () => {
+  //   allowExplicit = explicit_checkbox.checked;
+  //   console.log(allowExplicit);
+  // };
+  //
+  // setInterval(temp, 1000);
 }
