@@ -1076,8 +1076,11 @@ footer > .text {
 
 .search_card > .title {
   font-size: 2rem;
+  font-family: "Inter";
+  font-weight: 600;
 }
 
 .search_card > .subtitle {
   margin-top: -2rem;
+  font-family: "OpenSans";
 }
