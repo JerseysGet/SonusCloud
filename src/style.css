@@ -1196,3 +1196,25 @@ input[type="number"] {
   font-family: "Inter";
   font-size: 2rem;
 }
+
+.review_title {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  text-align: left;
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+.review_container {
+  margin-top: 3rem;
+  margin-left: 7rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.review_area {
+  resize: none;
+}
+
