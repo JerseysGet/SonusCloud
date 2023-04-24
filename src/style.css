@@ -1198,8 +1198,7 @@ input[type="number"] {
 }
 
 .review_title {
-  margin-left: 4rem;
-  margin-top: 2rem;
+  margin: 3rem;
   text-align: left;
   font-size: 5rem;
   letter-spacing: 0.2rem;
@@ -1207,14 +1206,83 @@ input[type="number"] {
 }
 
 .review_container {
-  margin-top: 3rem;
-  margin-left: 7rem;
+  margin: 5rem;
+  font-family: "OpenSans";
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: left;
 }
 
-.review_area {
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
   resize: none;
 }
 
+.review_input {
+  font-family: "OpenSans";
+  font-size: 1.5rem;
+  border-style: hidden;
+  background-color: rgb(20, 20, 20);
+  border-radius: 0.6rem;
+  color: white;
+  padding: 0.8rem;
+  margin: 0.7rem;
+  width: 30rem;
+}
+
+.name_input {
+}
+
+.review_area {
+  height: 10rem;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 50px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: "★";
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+.review_container > button {
+  margin: 0.5rem;
+  background: rgb(16, 16, 16);
+  font-size: 1.3rem;
+  font-family: "OpenSans";
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+}
