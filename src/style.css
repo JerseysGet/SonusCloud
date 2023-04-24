@@ -1206,7 +1206,7 @@ input[type="number"] {
 }
 
 .review_container {
-  margin: 5rem;
+  margin: 2rem;
   font-family: "OpenSans";
   font-size: 2rem;
   display: flex;
@@ -1236,7 +1236,12 @@ textarea {
   width: 30rem;
 }
 
-.name_input {
+.review_input:focus::placeholder {
+  opacity: 0;
+}
+
+.review_input::placeholder {
+  transition: 0.2s;
 }
 
 .review_area {
