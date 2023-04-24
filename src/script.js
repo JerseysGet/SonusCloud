@@ -268,11 +268,4 @@ if (window.location.pathname === "/src/search.html") {
       })();
     }
   });
-
-  // const temp = () => {
-  //   allowExplicit = explicit_checkbox.checked;
-  //   console.log(allowExplicit);
-  // };
-  //
-  // setInterval(temp, 1000);
 }
