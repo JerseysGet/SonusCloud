@@ -187,7 +187,6 @@ const animateSearchBar = () => {
     searchBarContainer.style.backgroundColor = rgb(20, 20, 20);
   });
 };
-console.log(window.location.pathname);
 insertNavbar();
 insertFooter();
 animateHeaders();
