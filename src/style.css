@@ -1067,7 +1067,6 @@ footer > .text {
 }
 
 .search_card > .album_cover {
-  /* background: url("./assets/images/kitri/a1.jpg"); */
   background-size: contain;
   width: 15rem;
   height: 15rem;
@@ -1078,6 +1077,10 @@ footer > .text {
   font-size: 2rem;
   font-family: "Inter";
   font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .search_card > .subtitle {
