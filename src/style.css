@@ -1151,7 +1151,6 @@ footer > .text {
   bottom: 0.4rem;
   background-color: rgb(200, 200, 200);
   transition: 0.4s;
-
 }
 
 .switch > input:checked + .slider::before {
@@ -1322,4 +1321,23 @@ table {
 th,
 td {
   width: 20rem;
+}
+
+.spotlight_card {
+  background-size: 180%;
+  animation: pan 5s 1 linear, zoom 5s 1 cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes zoom {
+  0% {
+    background-size: 180%;
+  }
+
+  50% {
+    background-size: 250%;
+  }
+
+  100% {
+    background-size: 180%;
+  }
 }
