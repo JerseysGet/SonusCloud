@@ -29,18 +29,26 @@ const getNav = (selected) => {
   searchLinkNode.href = getPath("search.html");
   searchLinkNode.textContent = "SEARCH";
 
-  [indexLinkNode, artistsLinkNode, aboutLinkNode, searchLinkNode].forEach(
-    (node) => {
-      node.addEventListener("mouseenter", () => {
-        node.classList.add("nav_hover");
-        console.log("Entering");
-      });
-      node.addEventListener("mouseleave", () => {
-        node.classList.remove("nav_hover");
-        console.log("Leaving");
-      });
-    }
-  );
+  const spotlightLinkNode = document.createElement("a");
+  spotlightLinkNode.href = getPath("spotlight.html");
+  spotlightLinkNode.textContent = "SPOTLIGHT";
+
+  [
+    indexLinkNode,
+    artistsLinkNode,
+    aboutLinkNode,
+    searchLinkNode,
+    spotlightLinkNode,
+  ].forEach((node) => {
+    node.addEventListener("mouseenter", () => {
+      node.classList.add("nav_hover");
+      console.log("Entering");
+    });
+    node.addEventListener("mouseleave", () => {
+      node.classList.remove("nav_hover");
+      console.log("Leaving");
+    });
+  });
 
   const dotNode = document.createElement("div");
   dotNode.classList.add("dot");
@@ -53,6 +61,8 @@ const getNav = (selected) => {
     aboutLinkNode.classList.add("selected");
   } else if (selected === "search") {
     searchLinkNode.classList.add("selected");
+  } else if (selected === "spotlight") {
+    spotlightLinkNode.classList.add("selected");
   }
 
   nav.append(
@@ -60,6 +70,7 @@ const getNav = (selected) => {
     artistsLinkNode,
     aboutLinkNode,
     searchLinkNode,
+    spotlightLinkNode,
     dotNode
   );
 
@@ -77,7 +88,7 @@ const insertNavbar = () => {
   navbar.appendChild(logo);
   const filename = window.location.pathname.split("/").pop().split(".")[0];
 
-  if (["about", "artists", "index", "search"].includes(filename)) {
+  if (["about", "artists", "index", "search", "spotlight"].includes(filename)) {
     navbar.appendChild(getNav(filename));
   } else {
     navbar.appendChild(getNav());
