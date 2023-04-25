@@ -1115,7 +1115,6 @@ footer > .text {
 
 .switch {
   --secondary-container: #3a4b39;
-  --primary: #84da89;
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -1137,7 +1136,7 @@ footer > .text {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #313033;
+  background-color: #141414;
   transition: 0.2s;
   border-radius: 30px;
 }
@@ -1145,29 +1144,35 @@ footer > .text {
 .switch > .slider:before {
   position: absolute;
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.2em;
-  bottom: 0.2em;
-  background-color: #aeaaae;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 1rem;
+  left: 0.5rem;
+  bottom: 0.4rem;
+  background-color: rgb(200, 200, 200);
   transition: 0.4s;
+
 }
 
 .switch > input:checked + .slider::before {
-  background-color: var(--primary);
+  background-color: rgb(200, 200, 200);
 }
 
 .switch > input:checked + .slider {
-  background-color: var(--secondary-container);
+  background-image: linear-gradient(140deg, var(--primary), var(--secondary));
+}
+
+.switch > input:checked + .explicit_slider {
+  background-image: none;
+  background-color: #990000;
 }
 
 .switch > input:focus + .slider {
-  box-shadow: 0 0 1px var(--secondary-container);
+  box-shadow: 0 0 1px #141414;
 }
 
 .switch > input:checked + .slider:before {
-  transform: translateX(1.9em);
+  transform: translateX(1.7em);
 }
 
 .filters_container > .minutes {
