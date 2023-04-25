@@ -320,7 +320,10 @@ if (window.location.pathname === "/src/search.html") {
   });
 } else if (window.location.pathname === "/src/spotlight.html") {
   const form = document.querySelector("form");
+  const table = document.querySelector("table");
+  table.style.opacity = 0;
   form.addEventListener("submit", (e) => {
+    table.style.opacity = 1;
     e.preventDefault();
     const formData = new FormData(e.target);
     const tableBody = document.querySelector("tbody");
@@ -330,7 +333,11 @@ if (window.location.pathname === "/src/search.html") {
     const reviewNode = document.createElement("td");
     reviewNode.textContent = formData.get("review");
     const ratingNode = document.createElement("td");
-    ratingNode.textContent = `${formData.get("rate")} stars`;
+    if (formData.get("rate")) {
+      ratingNode.textContent = (formData.get("rate") == 1) ? `1 star` : `${formData.get("rate")} stars`;
+    } else {
+      ratingNode.textContent = "0 stars"; 
+    }
     row.append(nameNode, reviewNode, ratingNode);
     tableBody.appendChild(row);
   });
