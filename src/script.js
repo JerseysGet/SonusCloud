@@ -42,11 +42,9 @@ const getNav = (selected) => {
   ].forEach((node) => {
     node.addEventListener("mouseenter", () => {
       node.classList.add("nav_hover");
-      console.log("Entering");
     });
     node.addEventListener("mouseleave", () => {
       node.classList.remove("nav_hover");
-      console.log("Leaving");
     });
   });
 
@@ -124,7 +122,6 @@ const getSongsData = async (songName) => {
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       return data.results.map(
         ({
           trackName,
@@ -287,7 +284,6 @@ const animateInputs = () => {
       el.style.backgroundColor = "rgb(20, 20, 20)";
     });
   });
-  console.table(reviewInputs);
 };
 
 animateInputs();
@@ -314,5 +310,18 @@ if (window.location.pathname === "/src/search.html") {
         );
       })();
     }
+  });
+} else if (window.location.pathname === "/src/spotlight.html") {
+  reviews = [];
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    reviews.push({
+      name: formData.get("name"),
+      review: formData.get("review"),
+      rating: formData.get("rate"),
+    });
+    console.log(reviews);
   });
 }
