@@ -1306,11 +1306,11 @@ textarea {
 }
 
 .review_container > button:hover {
-  background: rgb(32, 32, 32);
+  background: #0a0a0a;
 }
 
 .review_container > button:active {
-  background: rgb(64, 64, 64);
+  background: #141414;
 }
 
 table {
@@ -1340,4 +1340,32 @@ td {
   100% {
     background-size: 180%;
   }
+}
+
+.table_container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 60%;
+  border-spacing: 0 2rem;
+  font-family: "OpenSansLight";
+  font-size: 1.5rem;  
+}
+
+th {
+  background-color: #141414;
+  height: 3.5rem;
+}
+
+th:nth-child(1) {
+  width: 10%;
+}
+th:nth-child(2) {
+  width: 30%;
+}
+th:nth-child(3) {
+  width: 7.5%;
 }
