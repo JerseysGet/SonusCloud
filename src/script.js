@@ -345,7 +345,7 @@ if (window.location.pathname === "/src/search.html") {
 
   const endTime = new Date("30 June 2023 00:00");
   const countdownNode = document.querySelector(".countdown");
-  setInterval(() => {
+  const updateCounter = () => {
     const now = new Date().getTime();
     const diff = endTime - now;
 
@@ -358,6 +358,8 @@ if (window.location.pathname === "/src/search.html") {
       .toString()
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     console.log(`${days} ${hours} ${minutes} ${seconds}`);
-  }, 1000);
-  console.log(endTime);
+  };
+
+  updateCounter();
+  setInterval(updateCounter, 1000);
 }
