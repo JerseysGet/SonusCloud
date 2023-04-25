@@ -1300,3 +1300,11 @@ textarea {
   border-radius: 0.4rem;
   color: white;
 }
+
+.review_container > button:hover {
+  background: rgb(32, 32, 32);
+}
+
+.review_container > button:active {
+  background: rgb(64, 64, 64);
+}
