@@ -312,16 +312,19 @@ if (window.location.pathname === "/src/search.html") {
     }
   });
 } else if (window.location.pathname === "/src/spotlight.html") {
-  reviews = [];
   const form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    reviews.push({
-      name: formData.get("name"),
-      review: formData.get("review"),
-      rating: formData.get("rate"),
-    });
-    console.log(reviews);
+    const tableBody = document.querySelector("tbody");
+    const row = document.createElement("tr");
+    const nameNode = document.createElement("td");
+    nameNode.textContent = formData.get("name");
+    const reviewNode = document.createElement("td");
+    reviewNode.textContent = formData.get("review");
+    const ratingNode = document.createElement("td");
+    ratingNode.textContent = `${formData.get("rate")} stars`;
+    row.append(nameNode, reviewNode, ratingNode);
+    tableBody.appendChild(row);
   });
 }

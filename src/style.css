@@ -1308,3 +1308,13 @@ textarea {
 .review_container > button:active {
   background: rgb(64, 64, 64);
 }
+
+table {
+  width: 100%;
+  margin: 3rem 0;
+}
+
+th,
+td {
+  width: 20rem;
+}
