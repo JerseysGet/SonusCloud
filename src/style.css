@@ -338,6 +338,10 @@ nav > a:nth-child(5).nav_hover ~ .dot {
   background-color: var(--secondary);
 }
 
+.spotlight_hero {
+  background-color: var(--primary-desat);
+}
+
 @keyframes pan {
   0% {
     background-position: 0% 8%;
@@ -399,6 +403,10 @@ nav > a:nth-child(5).nav_hover ~ .dot {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.spotlight_transition {
+  background: linear-gradient(var(--primary-desat), black);
 }
 
 .countdown {
@@ -1335,7 +1343,7 @@ td {
 
 .spotlight_card {
   background-size: 180%;
-  animation: pan 5s 1 linear, zoom 5s 1 cubic-bezier(0.23, 1, 0.32, 1);
+  animation: pan 5s 1 linear, zoom 5s 1 cubic-bezier(0.001, 1, 0.999, 1);
 }
 
 @keyframes zoom {
