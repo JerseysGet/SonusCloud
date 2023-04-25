@@ -10,6 +10,10 @@ const getPath = (path) => {
   return pathPrefix + path;
 };
 
+const redirectToHome = () => {
+  window.location.href = getPath("index.html");
+};
+
 const getNav = (selected) => {
   const nav = document.createElement("nav");
 
@@ -83,6 +87,8 @@ const insertNavbar = () => {
   logo.src = getPath("assets/images/logo_big_light.png");
   logo.alt = "SoC";
   logo.classList.add("logo");
+  logo.onclick = redirectToHome;
+  logo.style.cursor = "pointer";
   navbar.appendChild(logo);
   const filename = window.location.pathname.split("/").pop().split(".")[0];
 
@@ -106,11 +112,12 @@ const insertFooter = () => {
   footerText.classList.add("text");
   footerText.textContent = "Made by Praneeth & Faisal";
 
-  const Logo = document.createElement("img");
-  Logo.src = getPath("assets/images/logo_small_light.png");
-  Logo.alt = "logo";
-
-  footer.append(aboutLink, footerText, Logo);
+  const logo = document.createElement("img");
+  logo.src = getPath("assets/images/logo_small_light.png");
+  logo.alt = "logo";
+  logo.onclick = redirectToHome;
+  logo.style.cursor = "pointer";
+  footer.append(aboutLink, footerText, logo);
   body.appendChild(footer);
 };
 
