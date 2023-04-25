@@ -138,6 +138,7 @@ nav > a:nth-child(4).selected ~ .dot {
 
 nav > a:nth-child(5).selected ~ .dot {
   transform: translateX(720px);
+  opacity: 1;
 }
 
 nav > a:nth-child(1).nav_hover ~ .dot {
