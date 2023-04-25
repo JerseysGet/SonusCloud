@@ -334,11 +334,30 @@ if (window.location.pathname === "/src/search.html") {
     reviewNode.textContent = formData.get("review");
     const ratingNode = document.createElement("td");
     if (formData.get("rate")) {
-      ratingNode.textContent = (formData.get("rate") == 1) ? `1 star` : `${formData.get("rate")} stars`;
+      ratingNode.textContent =
+        formData.get("rate") == 1 ? `1 star` : `${formData.get("rate")} stars`;
     } else {
-      ratingNode.textContent = "0 stars"; 
+      ratingNode.textContent = "0 stars";
     }
     row.append(nameNode, reviewNode, ratingNode);
     tableBody.appendChild(row);
   });
+
+  const endTime = new Date("30 June 2023 00:00");
+  const countdownNode = document.querySelector(".countdown");
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = endTime - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownNode.textContent = `New Song in ${days} days ${hours}:${minutes
+      .toString()
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    console.log(`${days} ${hours} ${minutes} ${seconds}`);
+  }, 1000);
+  console.log(endTime);
 }
