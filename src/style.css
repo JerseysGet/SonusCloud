@@ -411,7 +411,7 @@ nav > a:nth-child(5).nav_hover ~ .dot {
 
 .countdown {
   margin-right: 4rem;
-  font-family: "Inter";
+  font-family: "OpenSans";
   transform: translateY(-7rem);
   font-size: 2.4rem;
 }
@@ -1370,7 +1370,7 @@ table {
   width: 60%;
   border-spacing: 0 2rem;
   font-family: "OpenSansLight";
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
 }
 
 th {
