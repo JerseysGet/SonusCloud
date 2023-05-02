@@ -40,5 +40,5 @@ for album in spotify.artist_albums(artist_id, album_type="album")["items"]:
 
     data["albums"].append(album_data)
 
-with open(f"{name}.json", "w") as f:
+with open(f"./src/static/artists/{name}.json", "w") as f:
     dump(data, f)
