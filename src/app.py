@@ -75,8 +75,6 @@ def playlist():
     db = Database()
     songs = db.get_all_songs()
     db.close()
-    # print(songs)
-    # print(reverse_artists_map)
     artist_dict = defaultdict(list)
     for song in sorted(songs):
         artist_dict[song[0]].append(song[1:])
@@ -92,9 +90,7 @@ def playlist():
             track = artist_data["albums"][album_id]["tracks"][song_id]
             track["artist"] = artist_data["full_name"]
             tracks.append(artist_data["albums"][album_id]["tracks"][song_id])
-            # print(artist_id, album_id, song_id)
 
-    # print(artist_dict)
     return render_template("playlist.html", tracks=tracks)
 
 
