@@ -279,8 +279,8 @@ if (windowName === "/search") {
       fetch("/toggle_song", {
         method: "POST",
         body: JSON.stringify({
-          albumID,
           artistID,
+          albumID,
           songID,
         }),
         headers: {
@@ -293,8 +293,23 @@ if (windowName === "/search") {
   const minusButtons = document.querySelectorAll(".minus");
   minusButtons.forEach((minusButton) => {
     minusButton.addEventListener("click", () => {
-      console.log("clicked");
-      minusButton.parentNode.parentNode.parentNode.remove();
+      const currentTrack = minusButton.parentNode.parentNode.parentNode;
+      const [artistID, albumID, songID] = currentTrack.dataset.id
+        .split(" ")
+        .map(Number);
+
+      fetch("/toggle_song", {
+        method: "POST",
+        body: JSON.stringify({
+          artistID,
+          albumID,
+          songID,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      currentTrack.remove();
     });
   });
 }
