@@ -23,7 +23,7 @@ content %} {% set album = albums[album_index] %}
     <div class="song_label">Songs</div>
     <ol class="track_list">
       {% for track in album['tracks'] %}
-      <div class="track">
+      <div class="track {{ 'favourite' if loop.index-1 in songIDs else '' }}">
         <div class="track_info">
           <li class="track_number">{{track['name']}}</li>
           <div class="right">
