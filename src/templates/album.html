@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %} Search {% endblock %} {% block
+{% extends 'base.html' %} {% block title %} {{ albums[album_index]['name'] }} {% endblock %} {% block
 content %} {% set album = albums[album_index] %}
 
 <div class="album_container">
