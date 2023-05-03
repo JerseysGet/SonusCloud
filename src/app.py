@@ -3,6 +3,13 @@ from song_db import Database
 import json
 
 app = Flask(__name__)
+artists_map = {
+    "5sos": 0,
+    "chainsmokers": 1,
+    "radwimps": 2,
+    "queen": 3,
+    "kitri": 4,
+}
 
 
 @app.route("/")
@@ -44,8 +51,7 @@ def album(name: str, album_index: int):
         data = json.load(f)
 
     db = Database()
-    # songIDs = db.get_songs(artistID, albumID)
-    songIDs = [0, 2, 3]
+    songIDs = db.get_songs(artists_map[name], album_index)
     db.close()
     return render_template(
         "album.html", **data, album_index=album_index, songIDs=songIDs
@@ -56,7 +62,7 @@ def album(name: str, album_index: int):
 def toggle_song():
     song_data = json.loads(request.get_data().decode("UTF-8"))
     db = Database()
-    # db.toggle_song(song_data["artistID"], song_data["albumID"], song_data["songID"])
+    db.toggle_song(song_data["artistID"], song_data["albumID"], song_data["songID"])
     db.close()
     return {}
 
