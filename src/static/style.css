@@ -692,12 +692,12 @@ nav > a:nth-child(6):hover ~ .dot {
 .track_info .right .plus {
   font-size: 1.8rem;
   transition: 0.15s;
+  user-select: none;
 }
 
 .track_info .right .plus:hover {
   scale: 1.25;
   cursor: pointer;
-  user-select: none;
 }
 
 .favourite .track_info .right .plus {
@@ -1434,5 +1434,38 @@ th:nth-child(3) {
   letter-spacing: 0.2rem;
 }
 
-.track_info > .artist_name {
+.playlist_track {
+  width: 100%;
+  display: grid;
+  padding: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.playlist_track .track_number {
+  justify-self: left;
+}
+
+.playlist_track .artist_name {
+  justify-self: center;
+}
+
+.playlist_track .right {
+  justify-self: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.playlist_track .right .minus {
+  font-size: 3rem;
+  transition: 0.15s;
+  user-select: none;
+  transform: translateY(-0.25rem);
+}
+
+.playlist_track .right .minus:hover {
+  cursor: pointer;
+  transform: translateY(-0.4rem) scale(1.5);
 }
