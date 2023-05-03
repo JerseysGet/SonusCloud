@@ -243,12 +243,9 @@ if (windowName === "/search") {
   updateCounter();
   setInterval(updateCounter, 1000);
 } else if (isAlbumPage.test(windowName)) {
-  // const songButtons = document.querySelectorAll(".plus");
   const artistNameRegex = /\/.*\//;
   const artistName = windowName.match(artistNameRegex)[0].slice(1, -1);
   const albumID = parseInt(windowName.split("/").pop());
-  console.log(artistName);
-  // console.log(albumID);
 
   let artistID = -1;
   switch (artistName) {
@@ -271,19 +268,24 @@ if (windowName === "/search") {
       artistID = -1;
   }
 
-  console.log(artistID);
-  console.log(albumID);
-
-  fetch("/addSong", {
-    method: "POST",
-    body: JSON.stringify({
-      albumID,
-      artistID,
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
+  const songButtons = document.querySelectorAll(".plus");
+  songButtons.forEach((songButton) => {
+    songButton.addEventListener("click", () => {
+      const songTrack = songButton.parentNode.parentNode.parentNode;
+      const songID = Array.from(songTrack.parentNode.children).indexOf(
+        songTrack
+      );
+      fetch("/add_song", {
+        method: "POST",
+        body: JSON.stringify({
+          albumID,
+          artistID,
+          songID,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+    });
   });
-
-  // songButtons.forEach((songButton) => {});
 }

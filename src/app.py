@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from song_db import Database
 import json
 
@@ -52,6 +52,12 @@ def album(name: str, album_index: int):
     db.close()
 
     return render_template("album.html", **data, album_index=album_index)
+
+
+@app.route("/add_song", methods=["POST"])
+def add_song():
+    print(json.loads(request.get_data().decode("UTF-8")))
+    return {}
 
 
 if __name__ == "__main__":
