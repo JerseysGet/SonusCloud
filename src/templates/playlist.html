@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %} Playlist {% endblock %} {% block
+content %}
+<div class="background">
+  <div class="playlist_page">
+    <div class="playlist_header">
+      <h1>Favourites</h1>
+    </div>
+
+    <div class="playlist_container">
+      <ol class="track_list">
+        <div class="track">
+          <div class="track_info">
+            <li class="track_number">Track Name</li>
+            <div class="artist_name">Artist Name</div>
+            <div class="right">
+              <div class="plus">+</div>
+              <div class="track_length">1:05</div>
+            </div>
+          </div>
+        </div>
+      </ol>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
