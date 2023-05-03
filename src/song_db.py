@@ -60,6 +60,10 @@ class Database:
         )
         return [song[0] for song in self.cursor.fetchall()]
 
+    def get_all_songs(self) -> list[tuple[int, int, int]]:
+        self.cursor.execute("SELECT * FROM SONGS")
+        return self.cursor.fetchall()
+
     def close(self) -> None:
         self.connection.close()
 
