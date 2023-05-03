@@ -89,6 +89,9 @@ def playlist():
         for album_id, song_id in artist_songs:
             track = artist_data["albums"][album_id]["tracks"][song_id]
             track["artist"] = artist_data["full_name"]
+            track["artist_id"] = artist_id
+            track["album_id"] = album_id
+            track["song_id"] = song_id
             tracks.append(artist_data["albums"][album_id]["tracks"][song_id])
 
     return render_template("playlist.html", tracks=tracks)

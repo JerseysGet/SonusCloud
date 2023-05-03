@@ -289,4 +289,12 @@ if (windowName === "/search") {
       });
     });
   });
+} else if (windowName === "/playlist") {
+  const minusButtons = document.querySelectorAll(".minus");
+  minusButtons.forEach((minusButton) => {
+    minusButton.addEventListener("click", () => {
+      console.log("clicked");
+      minusButton.parentNode.parentNode.parentNode.remove();
+    });
+  });
 }
