@@ -16,7 +16,9 @@ data = {
     "name": name,
     "full_name": artist["name"],
     "genre": artist["genres"][0],
-    "image": base64.b64encode(requests.get(artist["images"][0]["url"]).content).decode("utf-8"),
+    "image": base64.b64encode(requests.get(artist["images"][0]["url"]).content).decode(
+        "utf-8"
+    ),
     "albums": [],
 }
 
@@ -28,7 +30,9 @@ for album in spotify.artist_albums(artist_id, album_type="album")["items"]:
     album_data = {
         "name": album["name"],
         "year": album["release_date"][:4],
-        "image": base64.b64encode(requests.get(album["images"][0]["url"]).content).decode("utf-8"),
+        "image": base64.b64encode(
+            requests.get(album["images"][0]["url"]).content
+        ).decode("utf-8"),
         "tracks": [],
     }
     for song in spotify.album_tracks(album["id"])["items"]:
