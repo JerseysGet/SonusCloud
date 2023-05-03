@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from song_db import Database
+from collections import defaultdict
 import json
 
 app = Flask(__name__)
@@ -10,6 +11,8 @@ artists_map = {
     "queen": 3,
     "kitri": 4,
 }
+
+reverse_artists_map = dict(reversed(item) for item in artists_map.items())
 
 
 @app.route("/")
@@ -69,10 +72,30 @@ def toggle_song():
 
 @app.route("/playlist")
 def playlist():
-    # db = Database()
-    # songs = db.get_all_songs()
-    # # map tuple to artist,album,song
-    return render_template("playlist.html")
+    db = Database()
+    songs = db.get_all_songs()
+    db.close()
+    # print(songs)
+    # print(reverse_artists_map)
+    artist_dict = defaultdict(list)
+    for song in sorted(songs):
+        artist_dict[song[0]].append(song[1:])
+
+    tracks = []
+    for artist_id, artist_songs in artist_dict.items():
+        with app.open_resource(
+            f"static/artists/{reverse_artists_map[artist_id]}.json"
+        ) as f:
+            artist_data = json.load(f)
+
+        for album_id, song_id in artist_songs:
+            track = artist_data["albums"][album_id]["tracks"][song_id]
+            track["artist"] = artist_data["full_name"]
+            tracks.append(artist_data["albums"][album_id]["tracks"][song_id])
+            # print(artist_id, album_id, song_id)
+
+    # print(artist_dict)
+    return render_template("playlist.html", tracks=tracks)
 
 
 if __name__ == "__main__":
