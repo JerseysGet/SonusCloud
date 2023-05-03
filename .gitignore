@@ -3,3 +3,4 @@ temp.css
 
 venv
 .cache
+__pycache__
