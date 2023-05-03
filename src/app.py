@@ -67,5 +67,13 @@ def toggle_song():
     return {}
 
 
+@app.route("/playlist")
+def playlist():
+    # db = Database()
+    # songs = db.get_all_songs()
+    # # map tuple to artist,album,song
+    return render_template("playlist.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

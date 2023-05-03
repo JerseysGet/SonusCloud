@@ -1410,3 +1410,21 @@ th:nth-child(2) {
 th:nth-child(3) {
   width: 7.5%;
 }
+
+.playlist_page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playlist_header > h1 {
+  font-family: "OpenSans";
+  font-size: 5.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.track_info > .artist_name {
+  
+}
