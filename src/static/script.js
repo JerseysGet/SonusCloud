@@ -272,6 +272,7 @@ if (windowName === "/search") {
   songButtons.forEach((songButton) => {
     songButton.addEventListener("click", () => {
       const songTrack = songButton.parentNode.parentNode.parentNode;
+      songTrack.classList.toggle("favourite");
       const songID = Array.from(songTrack.parentNode.children).indexOf(
         songTrack
       );
