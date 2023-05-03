@@ -78,7 +78,7 @@ a {
 
 nav {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 10rem));
+  grid-template-columns: repeat(6, minmax(0, 10rem));
   text-align: center;
   position: absolute;
   right: 4rem;
@@ -141,6 +141,11 @@ nav > a:nth-child(5).selected ~ .dot {
   opacity: 1;
 }
 
+nav > a:nth-child(6).selected ~ .dot {
+  transform: translateX(880px);
+  opacity: 1;
+}
+
 nav > a:nth-child(1):hover ~ .dot {
   transform: translateX(75px);
 }
@@ -159,6 +164,10 @@ nav > a:nth-child(4):hover ~ .dot {
 
 nav > a:nth-child(5):hover ~ .dot {
   transform: translateX(720px);
+}
+
+nav > a:nth-child(6):hover ~ .dot {
+  transform: translateX(880px);
 }
 
 .background {
@@ -1426,5 +1435,4 @@ th:nth-child(3) {
 }
 
 .track_info > .artist_name {
-  
 }
