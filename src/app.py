@@ -5,10 +5,6 @@ import json
 app = Flask(__name__)
 
 
-def get_primes(upper_limit: int) -> list[int]:
-    return [p for p in range(2, 1000) if all(p % i != 0 for i in range(2, p))]
-
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -54,9 +50,12 @@ def album(name: str, album_index: int):
     return render_template("album.html", **data, album_index=album_index)
 
 
-@app.route("/add_song", methods=["POST"])
-def add_song():
-    print(json.loads(request.get_data().decode("UTF-8")))
+@app.route("/toggle_song", methods=["POST"])
+def toggle_song():
+    song_data = json.loads(request.get_data().decode("UTF-8"))
+    db = Database()
+    # db.toggle_song(song_data["artistID"], song_data["albumID"], song_data["songID"])
+    db.close()
     return {}
 
 

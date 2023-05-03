@@ -275,7 +275,7 @@ if (windowName === "/search") {
       const songID = Array.from(songTrack.parentNode.children).indexOf(
         songTrack
       );
-      fetch("/add_song", {
+      fetch("/toggle_song", {
         method: "POST",
         body: JSON.stringify({
           albumID,
