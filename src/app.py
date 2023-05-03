@@ -44,10 +44,12 @@ def album(name: str, album_index: int):
         data = json.load(f)
 
     db = Database()
-    song_id = db.get_songs()
+    # songIDs = db.get_songs(artistID, albumID)
+    songIDs = [0, 2, 3]
     db.close()
-
-    return render_template("album.html", **data, album_index=album_index)
+    return render_template(
+        "album.html", **data, album_index=album_index, songIDs=songIDs
+    )
 
 
 @app.route("/toggle_song", methods=["POST"])

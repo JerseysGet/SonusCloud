@@ -680,15 +680,19 @@ nav > a:nth-child(5):hover ~ .dot {
   align-items: center;
 }
 
-.track_info > .right > .plus {
+.track_info .right .plus {
   font-size: 1.8rem;
   transition: 0.15s;
-  transform-origin: center center;
 }
 
-.track_info > .right > .plus:hover {
-  transform: scale(1.25);
+.track_info .right .plus:hover {
+  scale: 1.25;
   cursor: pointer;
+  user-select: none;
+}
+
+.favourite .track_info .right .plus {
+  rotate: 45deg;
 }
 
 ol {
