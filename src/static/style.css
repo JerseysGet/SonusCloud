@@ -669,7 +669,26 @@ nav > a:nth-child(5):hover ~ .dot {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 2rem;
+}
+
+.track_info > .right {
+  display: flex;
+  width: 7.5%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track_info > .right > .plus {
+  font-size: 1.8rem;
+  transition: 0.15s;
+  transform-origin: center center;
+}
+
+.track_info > .right > .plus:hover {
+  transform: scale(1.25);
+  cursor: pointer;
 }
 
 ol {

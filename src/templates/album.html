@@ -26,7 +26,10 @@ content %} {% set album = albums[album_index] %}
       <div class="track">
         <div class="track_info">
           <li class="track_number">{{track['name']}}</li>
-          <div class="track_length">{{track['length']}}</div>
+          <div class="right">
+            <div class="plus">+</div>
+            <div class="track_length">{{track['length']}}</div>
+          </div>
         </div>
       </div>
       {% endfor %}
