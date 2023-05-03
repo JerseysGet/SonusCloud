@@ -242,4 +242,48 @@ if (windowName === "/search") {
 
   updateCounter();
   setInterval(updateCounter, 1000);
+} else if (isAlbumPage.test(windowName)) {
+  // const songButtons = document.querySelectorAll(".plus");
+  const artistNameRegex = /\/.*\//;
+  const artistName = windowName.match(artistNameRegex)[0].slice(1, -1);
+  const albumID = parseInt(windowName.split("/").pop());
+  console.log(artistName);
+  // console.log(albumID);
+
+  let artistID = -1;
+  switch (artistName) {
+    case "5sos":
+      artistID = 0;
+      break;
+    case "chainsmokers":
+      artistID = 1;
+      break;
+    case "radwimps":
+      artistID = 2;
+      break;
+    case "queen":
+      artistID = 3;
+      break;
+    case "kitri":
+      artistID = 4;
+      break;
+    default:
+      artistID = -1;
+  }
+
+  console.log(artistID);
+  console.log(albumID);
+
+  fetch("/addSong", {
+    method: "POST",
+    body: JSON.stringify({
+      albumID,
+      artistID,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  // songButtons.forEach((songButton) => {});
 }
