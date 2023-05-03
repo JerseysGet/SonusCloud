@@ -683,12 +683,12 @@ nav > a:nth-child(5):hover ~ .dot {
 .track_info .right .plus {
   font-size: 1.8rem;
   transition: 0.15s;
-  transform-origin: center center;
 }
 
 .track_info .right .plus:hover {
   scale: 1.25;
   cursor: pointer;
+  user-select: none;
 }
 
 .favourite .track_info .right .plus {
