@@ -120,7 +120,7 @@ const animateHeaders = () => {
     const handler = onVisibilityChange(
       h,
       () => {
-        h.textContent = "";
+        h.textContent = final[0];
         if (happening) return;
         happening = true;
         const increment = (curPos) => {
@@ -131,10 +131,10 @@ const animateHeaders = () => {
             setTimeout(increment.bind(null, curPos + 1), 69);
           }
         };
-        increment(0);
+        increment(1);
       },
       () => {
-        h.textContent = "";
+        h.textContent = final[0];
       }
     );
     ["DOMContentLoaded", "load", "scroll", "resize"].forEach((ev) => {
