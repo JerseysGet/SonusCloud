@@ -174,9 +174,12 @@ const animateInputs = () => {
 
 animateInputs();
 animateHeaders();
-console.log(window.location.pathname);
 
-if (window.location.pathname === "/search") {
+const windowName = window.location.pathname;
+
+const isAlbumPage = /\/\w+\/\d+/;
+
+if (windowName === "/search") {
   animateSearchBar();
   const inp = document.querySelector("input");
   const explicit_checkbox = document.querySelector(
@@ -196,7 +199,7 @@ if (window.location.pathname === "/search") {
       })();
     }
   });
-} else if (window.location.pathname === "/spotlight") {
+} else if (windowName === "/spotlight") {
   const form = document.querySelector("form");
   const table = document.querySelector("table");
   table.style.opacity = 0;
