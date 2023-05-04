@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from song_db import Database
 from collections import defaultdict
 import json
+import os
 
 app = Flask(__name__)
 artists_map = {
@@ -14,6 +15,9 @@ artists_map = {
 
 reverse_artists_map = dict(reversed(item) for item in artists_map.items())
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route("/")
 def index():
