@@ -15,7 +15,7 @@
         src="{{ url_for('static', filename='images/logo_big_light.png') }}"
         alt="SoC"
         class="logo"
-        style="cursor: pointer"
+        onclick="window.location = '/'"
       />
       <nav>
         <a href="/" class="{{ 'selected' if active_page == 'home' else '' }}"
@@ -53,7 +53,7 @@
       <img
         src="{{ url_for('static', filename='images/logo_small_light.png') }}"
         alt="logo"
-        style="cursor: pointer"
+        onclick="window.location = '/'"
       />
     </footer>
   </body>

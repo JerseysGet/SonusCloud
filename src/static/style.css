@@ -76,6 +76,11 @@ a {
   width: 10vw;
 }
 
+.navbar > img,
+footer > img {
+  cursor: pointer;
+}
+
 nav {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 10rem));
