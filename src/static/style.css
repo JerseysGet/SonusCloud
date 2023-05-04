@@ -1434,6 +1434,18 @@ th:nth-child(3) {
   letter-spacing: 0.2rem;
 }
 
+.playlist_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.playlist_container > .track_list {
+  margin-left: 0;
+}
+
 .playlist_track {
   width: 100%;
   display: grid;
