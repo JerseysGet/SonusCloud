@@ -1,6 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/uO3FBJhb)
+# SonusCloud
 
-# SonusCloud: Phase 1
+
+https://github.com/PraneethJain/SonusCloud/assets/49565677/9b3efa92-5480-4a0d-9009-040c1e9f3ebe
+
+
+
 
 SonusCloud is an **Internet Music Database**, with current functionality of viewing various artists, their albums and songs.
 
